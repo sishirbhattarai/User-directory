@@ -22,6 +22,11 @@ The user should be able to:
 
   * Filter the users by at least one property.
 
+ This activity uses Bootstrap, so make sure you `import 'bootstrap/dist/css/bootstrap.min.css';` in `index.js`
+
+* Be sure to install the axios library by running `npm install axios` in your terminal.
+
+
 ## Commit Early and Often
 
 One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
