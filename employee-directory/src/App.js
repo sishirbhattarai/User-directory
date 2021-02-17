@@ -2,11 +2,14 @@ import React, { useEffect } from 'react'
 import './App.css';
 import API from './utils/API'
 
+
 function App() {
   const [ sortMap, setSortMap] = React.useState({
+    picture: true,
     name: true,
     email: true,
     phone: true,
+    
   })
   function handleSortFunction(columnName, isAscending) {
     setSortMap({
@@ -19,9 +22,9 @@ function App() {
     {
     name: "Jordan"
     },
-  {
-    name: "Jared"
-  }
+    {
+      name: "Jared"
+    }
 ];
 
 employees.sort((a, b) => {
