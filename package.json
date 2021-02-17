@@ -1,6 +1,6 @@
 {
   "homepage": "https://sishirbhattarai.github.io/User-directory/",
-  "name": "employee-directory",
+  "name": "User-directory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

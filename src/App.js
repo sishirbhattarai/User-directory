@@ -18,14 +18,17 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('https://randomuser.me/api/?results=25')
+      .get('https://randomuser.me/api/?results=50')
       .then((response) => {
+        console.log(response);
         const responseArray = response.data.results;
         setUserArray(responseArray);
         setFilteredArray(responseArray);
       })
       .catch((err) => console.log(err));
   }, []);
+
+
 
   function sortAsc(key) {
     let ascArray = [...userArray].sort((a, b) =>
