@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './index.css';
+import './App.css';
 import { HiArrowNarrowUp } from 'react-icons/hi';
 import { HiArrowNarrowDown } from 'react-icons/hi';
 import { HiSearch } from 'react-icons/hi';
@@ -20,12 +21,13 @@ function App() {
     axios
       .get('https://randomuser.me/api/?results=50')
       .then((response) => {
-  //      console.log(response);
+       console.log("response", response);
         const responseArray = response.data.results;
         setUserArray(responseArray);
         setFilteredArray(responseArray);
       })
       .catch((err) => console.log(err));
+      //get array []
   }, []);
 
 
@@ -42,8 +44,15 @@ function App() {
       b.name[key] > a.name[key] ? 1 : -1,
     );
     setFilteredArray(decArray);
-    console.log('help');
+    
   }
+  function ksort(key) {
+    let genArray = [...userArray].sort((a, b) =>
+      b.gender[key] > a.gender[key] ? 1 : -1,
+    );
+    setFilteredArray(genArray);
+}
+
 
   function search(e) {
     setSearchArray(e.target.value);
@@ -101,7 +110,20 @@ function App() {
                   onClick={() => sortAsc('last')}
                 />
               </th>
+              <th className='tracking-wider px-6 py-3 ' scope='col'>
+                Gender
+                <HiArrowNarrowDown
+                  type='button'
+                  className='ml-2 my-auto float-right'
+                  onClick={() => ksort('male')}
+                />
+                <HiArrowNarrowUp
+                  type='button'
+                  className='ml-2 my-auto float-right'
+                  onClick={() => ksort('female')}
+                />
 
+              </th>
               <th className='tracking-wider px-6 py-3 ' scope='col'>
                 Email
                 <HiOutlineMail className='ml-2 my-auto float-right space-x-0' />
@@ -116,6 +138,12 @@ function App() {
               >
                 Age
               </th>
+              <th
+                className='tracking-wider px-6 py-3 flex flex-row justify-center'
+                scope='col'
+              >
+                Country
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -128,6 +156,9 @@ function App() {
                   {result.name.last}
                 </td>
                 <td className='text-center p-5 border-gray-300 border-t'>
+                  {result.gender}
+                </td>
+                <td className='text-center p-5 border-gray-300 border-t'>
                   {result.email}
                 </td>
                 <td className='text-center p-5 border-gray-300 border-t'>
@@ -135,6 +166,9 @@ function App() {
                 </td>
                 <td className='text-center p-5 border-gray-300 border-t'>
                   {result.dob.age}
+                </td>
+                <td className='text-center p-5 border-gray-300 border-t'>
+                  {result.location.country}
                 </td>
               </tr>
             ))}
