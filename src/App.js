@@ -112,7 +112,7 @@ function App() {
               </th>
               <th className='tracking-wider px-6 py-3 ' scope='col'>
                 Gender
-                <HiArrowNarrowDown
+                {/* <HiArrowNarrowDown
                   type='button'
                   className='ml-2 my-auto float-right'
                   onClick={() => ksort('male')}
@@ -121,7 +121,7 @@ function App() {
                   type='button'
                   className='ml-2 my-auto float-right'
                   onClick={() => ksort('female')}
-                />
+                /> */}
 
               </th>
               <th className='tracking-wider px-6 py-3 ' scope='col'>
