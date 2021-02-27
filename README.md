@@ -5,7 +5,7 @@ To create Employee Directory
 
 ## User Story
 
-As a user, I want to pull a list of 50 of your 'employees' and have the ability to sort them by first or last name and the ability to search.
+As a user, I want to pull a list of 50 of my 'employees' and have the ability to sort them by first or last name and the ability to search.
 
 ## Live deployed Heroku site: 
 
